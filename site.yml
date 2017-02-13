@@ -1,0 +1,13 @@
+---
+# This playbook deploys my favourite packages in my workstation.
+
+- hosts: localhost
+  become: true
+  become_method: sudo
+  connection: local
+  gather_facts: no
+
+  roles:
+    - basic
+    - development
+#    - java

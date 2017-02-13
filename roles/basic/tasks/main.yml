@@ -1,0 +1,26 @@
+---
+- name: Install basic tools
+  action: apt pkg={{item}} state=installed
+  with_items:
+    - htop
+    - vim
+    - git
+    - subversion
+    - tmux
+    - python-pip
+
+- name: Use Xubuntu and XFCE packages instead of default Unity in Ubuntu
+  action: apt pkg={{item}} state=installed
+  with_items:
+   # https://sites.google.com/site/easylinuxtipsproject/alternative
+   - xubuntu-desktop
+   - gksu
+   - leafpad
+   - synaptic
+
+- name: Install communication tools
+  action: apt pkg={{item}} state=installed
+  with_items:
+   - thunderbird
+   - xchat-gnome
+
