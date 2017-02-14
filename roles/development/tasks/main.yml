@@ -1,32 +1,39 @@
 ---
 # Install development tools, and configure development environments
-#- name: Create workspace directories
-#  action: file path={{item}} state=directory
-#  with_items:
-#    - '/home/kinow/Development'
-#    - '/home/kinow/Development/java/workspace'
-#    - '/home/kinow/Development/java/apache'
-#    - '/home/kinow/Development/java/biouno'
-#    - '/home/kinow/Development/java/jenkins'
-#    - '/home/kinow/Development/java/jena'
-#    - '/home/kinow/Development/python/workspace'
-#    - '/home/kinow/Development/javascript/workspace'
-#    - '/home/kinow/Development/php/workspace'
+- name: Create workspace directories
+  action: file path={{item}} state=directory
+  with_items:
+    - '/home/kinow/Development'
+    - '/home/kinow/Development/java/workspace'
+    - '/home/kinow/Development/java/apache'
+    - '/home/kinow/Development/java/biouno'
+    - '/home/kinow/Development/java/jenkins'
+    - '/home/kinow/Development/java/jena'
+    - '/home/kinow/Development/python/workspace'
+    - '/home/kinow/Development/javascript/workspace'
+    - '/home/kinow/Development/php/workspace'
+    - '/home/kinow/Development/cpp/workspace'
+    - '/home/kinow/Development/ansible/workspace'
+
+- name: Install base development packages and headers
+  action: apt pkg={{item}} state=installed
+  with_items:
+    - build-essential
+    - unzip
+    - p7zip-full
 
 # Global editor
-  - git_config:
-    name: core.editor
-    scope: global
-    value: vim
+- name: Configure git global editor
+  git_config: name=core.editor scope=global value=vim
 
 # Global user
-  - git_config:
+- git_config:
     name: user.email
     scope: global
     value: brunodepaulak@yahoo.com.br
 
 # Global email
-  - git_config:
+- git_config:
     name: user.name
     scope: global
     value: "Bruno P. Kinoshita"

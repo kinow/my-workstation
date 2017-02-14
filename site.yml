@@ -9,5 +9,11 @@
 
   roles:
     - basic
+
+- hosts: localhost
+  become: false
+  connection: local
+  gather_facts: no
+  roles:
     - development
-#    - java
+
