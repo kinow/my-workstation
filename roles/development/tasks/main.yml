@@ -72,5 +72,22 @@
     scope: global
     value: simple
 
+# Sublime text
+
+# Install Java development environment
+# IDE is not covered
+
+- name: add webupd repo
+  become: True
+  become_method: sudo
+  apt_repository: repo='ppa:webupd8team/sublime-text-3'
+
+- name: install Sublime Text 3
+  become: True
+  become_method: sudo
+  apt: pkg={{item}} state=installed
+  with_items:
+    - sublime-text-installer
+
 - include: roles/development/tasks/java.yml
 
