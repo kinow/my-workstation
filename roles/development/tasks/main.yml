@@ -23,12 +23,23 @@
     - build-essential
     - unzip
     - p7zip-full
+    # For screen recording, creating GIF's, ...
+    - byzanz
 
 # Other packages
+
+# Copy Eclipse Workspace
 - name: Install cpew
   get_url:
     url: https://raw.githubusercontent.com/kinow/cpew/master/cpew
     dest: /home/kinow/bin/cpew
+    mode: 0750
+
+# Byzanz Record GUI
+- name: Install byzanz-gui
+  get_url:
+    url: https://raw.githubusercontent.com/rhcarvalho/byzanz-gui/master/byzanz-gui
+    dest: /home/kinow/bin/byzanz-gui
     mode: 0750
 
 # Global editor
