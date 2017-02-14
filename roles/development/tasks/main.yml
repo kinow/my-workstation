@@ -21,6 +21,8 @@
 
 - name: Install base development packages and headers
   action: apt pkg={{item}} state=installed
+  become: True
+  become_method: sudo
   with_items:
     - build-essential
     - unzip

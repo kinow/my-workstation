@@ -24,3 +24,8 @@
    - thunderbird
    - xchat-gnome
 
+- name: Download wallpaper
+  get_url:
+    url: "{{wallpaper_url}}"
+    dest: "/home/kinow/Pictures/wallpaper.jpg"
+
