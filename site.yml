@@ -6,7 +6,6 @@
   become_method: sudo
   connection: local
   gather_facts: no
-
   roles:
     - basic
 
