@@ -20,3 +20,13 @@
     - oracle-java8-installer
     - ca-certificates
     - oracle-java8-set-default
+
+- name: install other Java projects
+  become: True
+  become_method: sudo
+  apt: pkg={{item}} state=installed
+  with_items:
+    - maven
+    - ant
+    - ant-contrib
+
