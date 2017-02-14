@@ -3,6 +3,7 @@
 - name: Create workspace directories
   action: file path={{item}} state=directory
   with_items:
+    - '/home/kinow/bin'
     - '/home/kinow/Development'
     - '/home/kinow/Development/java/workspace'
     - '/home/kinow/Development/java/apache'
@@ -24,12 +25,11 @@
     - p7zip-full
 
 # Other packages
-- name: Install other development utilities
-  git:
-    repo: https://github.com/kinow/cpew.git
-    dest: /home/kinow/Development/shell/workspace/cpew
-    clone: yes
-    update: no
+- name: Install cpew
+  get_url:
+    url: https://raw.githubusercontent.com/kinow/cpew/master/cpew
+    dest: /home/kinow/bin/cpew
+    mode: 0750
 
 # Global editor
 - name: Configure git global editor
