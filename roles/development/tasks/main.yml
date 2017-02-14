@@ -14,6 +14,7 @@
     - '/home/kinow/Development/php/workspace'
     - '/home/kinow/Development/cpp/workspace'
     - '/home/kinow/Development/ansible/workspace'
+    - '/home/kinow/Development/shell/workspace'
 
 - name: Install base development packages and headers
   action: apt pkg={{item}} state=installed
