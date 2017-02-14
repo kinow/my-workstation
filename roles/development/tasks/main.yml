@@ -72,3 +72,5 @@
     scope: global
     value: simple
 
+- include: roles/development/tasks/java.yml
+
