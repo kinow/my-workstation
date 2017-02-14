@@ -23,6 +23,14 @@
     - unzip
     - p7zip-full
 
+# Other packages
+- name: Install other development utilities
+  git:
+    repo: https://github.com/kinow/cpew.git
+    dest: /home/kinow/Development/shell/workspace/cpew
+    clone: yes
+    update: no
+
 # Global editor
 - name: Configure git global editor
   git_config: name=core.editor scope=global value=vim
