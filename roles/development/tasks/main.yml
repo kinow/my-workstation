@@ -17,6 +17,8 @@
     - '/home/kinow/Development/ansible/workspace'
     - '/home/kinow/Development/shell/workspace'
 
+# --- Development packages
+
 - name: Install base development packages and headers
   action: apt pkg={{item}} state=installed
   with_items:
@@ -26,7 +28,7 @@
     # For screen recording, creating GIF's, ...
     - byzanz
 
-# Other packages
+# --- Other packages
 
 # Copy Eclipse Workspace
 - name: Install cpew
@@ -41,6 +43,8 @@
     url: https://raw.githubusercontent.com/rhcarvalho/byzanz-gui/master/byzanz-gui
     dest: /home/kinow/bin/byzanz-gui
     mode: 0750
+
+# --- git configurations
 
 # Global editor
 - name: Configure git global editor
