@@ -27,6 +27,9 @@
     - build-essential
     - unzip
     - p7zip-full
+    - curl
+    - xz-utils
+    - cpio
     # For screen recording, creating GIF's, ...
     - byzanz
 
