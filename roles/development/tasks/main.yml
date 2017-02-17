@@ -32,6 +32,7 @@
     - cpio
     # For screen recording, creating GIF's, ...
     - byzanz
+    - gitk
 
 # --- Other packages
 
