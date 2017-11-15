@@ -50,29 +50,6 @@
     dest: /home/kinow/bin/byzanz-gui
     mode: 0750
 
-# --- git configurations
-
-# Global editor
-- name: Configure git global editor
-  git_config: name=core.editor scope=global value=vim
-
-# Global user
-- git_config:
-    name: user.email
-    scope: global
-    value: brunodepaulak@yahoo.com.br
-
-# Global email
-- git_config:
-    name: user.name
-    scope: global
-    value: "Bruno P. Kinoshita"
-
-- git_config:
-    name: push.default
-    scope: global
-    value: simple
-
 # Sublime text
 
 # Install Java development environment
