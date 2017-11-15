@@ -67,5 +67,7 @@
   with_items:
     - sublime-text-installer
 
+- include: roles/development/tasks/sublime.yml
+
 - include: roles/development/tasks/java.yml
 
