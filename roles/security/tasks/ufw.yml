@@ -26,5 +26,9 @@
 #   notify:
 #     - restart ufw
 
+- name: Enable UFW
+  ufw:
+    state: enabled
+
 - name: ensure service starts on a fresh reboot
   service: name=ufw state=started enabled=yes
