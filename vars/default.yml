@@ -1,5 +1,6 @@
 ---
-# Packages installed
+# variables
+
 basic_packages:
   - apt-transport-https
   - htop
@@ -8,3 +9,5 @@ basic_packages:
   - tmux
   - tree
   - vim
+
+development_jad_installer: 'https://varaneckas.com/jad/jad158e.linux.static.zip'

@@ -1,0 +1,4 @@
+---
+# Configure basic security in the box
+
+- include: roles/security/tasks/ufw.yml

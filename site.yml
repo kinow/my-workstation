@@ -1,18 +1,13 @@
 ---
 # This playbook deploys my favourite packages in my workstation.
 
-- hosts: localhost
+- hosts: all
   become: true
-  become_method: sudo
   connection: local
   gather_facts: no
+  vars_files:
+    - vars/default.yml
   roles:
     - basic
-
-- hosts: localhost
-  become: false
-  connection: local
-  gather_facts: no
-  roles:
+    - security
     - development
-
