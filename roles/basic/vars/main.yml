@@ -2,3 +2,12 @@
 # Customizations
 wallpaper_url: 'http://more-sky.com/data/out/7/IMG_161434.jpg'
 
+# Packages installed
+packages:
+  - apt-transport-https
+  - htop
+  - python-pip
+  - rcconf
+  - tmux
+  - tree
+  - vim

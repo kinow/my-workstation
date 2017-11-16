@@ -2,24 +2,7 @@
 - name: Install basic tools
   action: apt pkg={{item}} state=installed
   with_items:
-    - htop
-    - vim
-    - git
-    - subversion
-    - tmux
-    - python-pip
-    - rcconf
-    - apt-transport-https
-    - tree
-
-- name: Use Xubuntu and XFCE packages instead of default Unity in Ubuntu
-  action: apt pkg={{item}} state=installed
-  with_items:
-   # https://sites.google.com/site/easylinuxtipsproject/alternative
-   - xubuntu-desktop
-   - gksu
-   - leafpad
-   - synaptic
+    {{ packages }}
 
 - name: Install communication tools
   action: apt pkg={{item}} state=installed
@@ -27,28 +10,6 @@
    - thunderbird
    - xchat-gnome
 
-- name: Download wallpaper
-  get_url:
-    url: "{{wallpaper_url}}"
-    dest: "/home/kinow/Pictures/wallpaper.jpg"
-
-- name: "apt | ensure Google linux signing key present"
-  apt_key: url=https://dl-ssl.google.com/linux/linux_signing_key.pub state=present
-
-- name: "apt | ensure previous repository for Google Chrome is absent, as Google removed the x86 distribution"
-  apt_repository: repo='deb http://dl.google.com/linux/chrome/deb/ stable main' state=absent
-
-- name: "apt | ensure Google chrome repo present, using a workaround for missing x86 distribution"
-  copy:
-    content: "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main"
-    dest: "/etc/apt/sources.list.d/google-chrome.list"
-  register: google_repo
-
-- name: "apt | update cache"
-  apt: update_cache=yes
-  when: google_repo.changed
-  
-- name: "apt | ensure Google chrome present"
-  apt: name=google-chrome-stable update_cache=yes
-
-
+- include: roles/basic/tasks/xfce.yml
+- include: roles/basic/tasks/wallpaper.yml
+- include: roles/basic/tasks/chrome.yml

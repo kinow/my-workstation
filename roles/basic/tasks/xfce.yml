@@ -1,0 +1,11 @@
+---
+# Install XFCE and Xubuntu
+
+- name: Use Xubuntu and XFCE packages instead of default Unity in Ubuntu
+  action: apt pkg={{item}} state=installed
+  with_items:
+   # https://sites.google.com/site/easylinuxtipsproject/alternative
+   - xubuntu-desktop
+   - gksu
+   - leafpad
+   - synaptic
