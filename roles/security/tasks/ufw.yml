@@ -6,21 +6,25 @@
   with_items:
   - ufw
 
-- name: set ufw policy to allow all outgoing connections
-  ufw: policy=allow direction=outgoing
-  when: security_ufw_apply_default_policy_allow_outgoing == true
-
-# - name: add ufw rule to allow incoming ssh connections
-#   ufw: rule=allow direction=in name=OpenSSH
-#   when: security_ufw_allow_incoming_ssh
-#
-# - name: add ufw rule to allow incoming tcp connections
-#   ufw: rule=allow direction=in port="{{ item }}" proto=tcp
-#   with_items: "{{ security_ufw_allowed_incoming_tcp_ports }}"
-
 - ufw:
-    state: enabled
-    policy: deny
+    logging: off
+
+- name: Configure ufw defaults
+  ufw: direction={{ item.direction }} policy={{ item.policy }}
+  with_items:
+    - { direction: 'incoming', policy: 'deny' }
+    - { direction: 'outgoing', policy: 'allow' }
+  notify:
+    - restart ufw
+
+# - name: Configure ufw rules
+#   ufw: rule={{ item.rule }} port={{ item.port }} proto={{ item.proto }}
+#   with_items:
+#     - { rule: 'limit', port: '{{ ssh_port | default("22") }}', proto: 'tcp' }
+#     - { rule: 'allow', port: '80', proto: 'tcp' }
+#     - { rule: 'allow', port: '443', proto: 'tcp' }
+#   notify:
+#     - restart ufw
 
 - name: ensure service starts on a fresh reboot
   service: name=ufw state=started enabled=yes
