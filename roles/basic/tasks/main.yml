@@ -10,6 +10,5 @@
    - thunderbird
    - xchat-gnome
 
-- include: roles/basic/tasks/xfce.yml
-- include: roles/basic/tasks/wallpaper.yml
-- include: roles/basic/tasks/chrome.yml
+- import_tasks: xfce.yml
+- import_tasks: roles/basic/tasks/chrome.yml

@@ -52,6 +52,6 @@
     dest: /home/kinow/bin/byzanz-gui
     mode: 0750
 
-- include: roles/development/tasks/sublime.yml
-- include: roles/development/tasks/java.yml
+- import_tasks: roles/development/tasks/sublime.yml
+- import_tasks: roles/development/tasks/java.yml
 
