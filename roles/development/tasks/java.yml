@@ -2,18 +2,15 @@
 # Install Java development environment
 # IDE is not covered
 
-- name: add webupd repo
-  become: True
+- name: Add webupd repo
   become_method: sudo
   apt_repository: repo='ppa:webupd8team/java'
 
-- name: deal with licence
-  become: True
+- name: Deal with licence
   become_method: sudo
   debconf: name='oracle-java8-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'
 
-- name: install Java
-  become: True
+- name: Install Java
   become_method: sudo
   apt: pkg={{item}} state=installed
   with_items:
@@ -21,8 +18,7 @@
     - ca-certificates
     - oracle-java8-set-default
 
-- name: install other Java projects
-  become: True
+- name: Install other Java projects
   become_method: sudo
   apt: pkg={{item}} state=installed
   with_items:
@@ -30,3 +26,28 @@
     - ant
     - ant-contrib
 
+# Install Apache Maven
+
+- name: Checking if Maven is already installed
+  stat: 
+    path: '/opt/apache-maven-{{ development_maven_version }}'
+  register: maven_installed
+
+- name: Downloading Maven Binaries
+  get_url:
+    url: '{{ development_maven_download_url }}'
+    dest: '/tmp/{{ development_maven_file_name }}'
+  when: maven_installed.stat.exists != True
+
+- name: Unarchive Maven Binaries
+  unarchive:
+    src: '/tmp/{{ development_maven_file_name }}'
+    dest: '/opt'
+    copy: no
+  when: maven_installed.stat.exists != True
+
+- name: Create mvn link
+  file:
+    src: '/opt/apache-maven-{{ development_maven_version }}/bin/mvn'
+    dest: '/home/kinow/bin/mvn'
+    state: link

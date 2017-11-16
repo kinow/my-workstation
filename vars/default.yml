@@ -10,4 +10,7 @@ basic_packages:
   - tree
   - vim
 
+development_maven_version: '3.5.2'
+development_maven_download_url: 'http://www-us.apache.org/dist/maven/maven-3/{{ development_maven_version }}/binaries/apache-maven-{{ development_maven_version }}-bin.zip'
+development_maven_file_name: 'apache-maven-{{ development_maven_version }}-bin.zip'
 development_jad_installer: 'https://varaneckas.com/jad/jad158e.linux.static.zip'
