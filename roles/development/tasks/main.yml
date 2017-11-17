@@ -29,7 +29,11 @@
     - curl
     - xz-utils
     - cpio
-    # For screen recording, creating GIF's, ...
+    # next three for python piecrust module
+    - libffi-dev
+    - cl-cffi
+    - ghp-import
+    # for screen recording, creating GIF's, ...
     - byzanz
     - gitk
     - git

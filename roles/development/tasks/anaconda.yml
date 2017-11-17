@@ -16,6 +16,14 @@
   shell: /bin/bash /tmp/{{ development_anaconda_file_name }} -b -f -p /home/kinow/Development/python/anaconda3
   when: anaconda_installed.stat.exists != True
 
+- name: Set permissions for folder
+  file:
+    path: /home/kinow/Development/python/anaconda3
+    owner: kinow
+    group: kinow
+    state: directory
+    recurse: yes
+
 - name: Create source file
   copy:
     content: |
