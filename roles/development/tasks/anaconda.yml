@@ -1,0 +1,26 @@
+---
+# Install Anaconda Python3
+
+- name: Checking if Anaconda is already installed
+  stat: 
+    path: '/home/kinow/Development/python/anaconda3'
+  register: anaconda_installed
+
+- name: Downloading Anaconda Binaries
+  get_url:
+    url: '{{ development_maven_download_url }}'
+    dest: '/tmp/{{ development_anaconda_file_name }}'
+  when: anaconda_installed.stat.exists != True
+
+# - name: Unarchive Anaconda Binaries
+#   unarchive:
+#     src: '/tmp/{{ development_anaconda_file_name }}'
+#     dest: '/opt'
+#     copy: no
+#   when: anaconda_installed.stat.exists != True
+
+# - name: Create mvn link
+#   file:
+#     src: '/opt/apache-maven-{{ development_maven_version }}/bin/mvn'
+#     dest: '/home/kinow/bin/mvn'
+#     state: link

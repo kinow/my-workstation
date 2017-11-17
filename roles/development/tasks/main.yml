@@ -34,6 +34,8 @@
     - gitk
     - git
     - subversion
+    # shellscript static analyzer
+    - shellcheck
 
 # --- Other packages
 
@@ -54,4 +56,5 @@
 - import_tasks: roles/development/tasks/sublime.yml
 - import_tasks: roles/development/tasks/java.yml
 - import_tasks: roles/development/tasks/maven.yml
+- import_tasks: roles/development/tasks/anaconda.yml
 
