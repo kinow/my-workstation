@@ -8,19 +8,20 @@
 
 - name: Downloading Anaconda Binaries
   get_url:
-    url: '{{ development_maven_download_url }}'
+    url: '{{ development_anaconda_download_url }}'
     dest: '/tmp/{{ development_anaconda_file_name }}'
   when: anaconda_installed.stat.exists != True
 
-# - name: Unarchive Anaconda Binaries
-#   unarchive:
-#     src: '/tmp/{{ development_anaconda_file_name }}'
-#     dest: '/opt'
-#     copy: no
-#   when: anaconda_installed.stat.exists != True
+- name: Batch install Anaconda
+  shell: /bin/bash /tmp/{{ development_anaconda_file_name }} -b -f -p /home/kinow/Development/python/anaconda3
+  when: anaconda_installed.stat.exists != True
 
-# - name: Create mvn link
-#   file:
-#     src: '/opt/apache-maven-{{ development_maven_version }}/bin/mvn'
-#     dest: '/home/kinow/bin/mvn'
-#     state: link
+- name: Create source file
+  copy:
+    content: |
+      #!/bin/bash
+
+      PATH=~/Development/python/anaconda3/bin:$PATH
+    dest: /home/kinow/Development/python/sa3.sh
+    backup: no
+  run_once: yes
