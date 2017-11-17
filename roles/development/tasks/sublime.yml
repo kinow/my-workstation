@@ -13,4 +13,3 @@
 - apt:
     name: sublime-text
     state: latest
-
