@@ -40,6 +40,8 @@
     - subversion
     # shellscript static analyzer
     - shellcheck
+    # image processing
+    - libimage-exiftool-perl
 
 # --- Other packages
 
