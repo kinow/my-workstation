@@ -10,6 +10,7 @@ basic_packages:
   - tmux
   - tree
   - vim
+  - youtube-dl
 
 # --- development
 # maven
