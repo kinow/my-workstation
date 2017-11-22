@@ -16,6 +16,13 @@
     - '/home/kinow/Development/cpp/workspace'
     - '/home/kinow/Development/ansible/workspace'
     - '/home/kinow/Development/shell/workspace'
+    - '/home/kinow/Development/r/workspace'
+
+# --- Development repositories
+
+- name: Install UbuntuGIS repository
+  apt_repository:
+    repo: 'ppa:ubuntugis/ppa'
 
 # --- Development packages
 
