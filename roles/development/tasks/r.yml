@@ -7,6 +7,10 @@
     id: E084DAB9
     state: present
 
+- apt_repository:
+    repo: deb https://cran.stat.auckland.ac.nz/bin/linux/ubuntu xenial/
+    state: present
+
 - name: Install R
   apt: update_cache=yes cache_valid_time=3600 pkg={{ item }} state=present # won't update if done under an hour ago
   with_items:
