@@ -23,3 +23,6 @@ development_jad_installer: 'https://varaneckas.com/jad/jad158e.linux.static.zip'
 development_anaconda_version: '5.0.1'
 development_anaconda_download_url: 'https://repo.continuum.io/archive/Anaconda3-{{development_anaconda_version}}-Linux-x86_64.sh'
 development_anaconda_file_name: 'Anaconda3-{{development_anaconda_version}}-Linux-x86_64.sh'
+# r
+development_rstudio_download_url: 'https://download1.rstudio.org/rstudio-xenial-1.1.383-amd64.deb'
+development_rstudio_download_checksum: 'fccec7cbf773c3464ea6cbb91fc2ec28'

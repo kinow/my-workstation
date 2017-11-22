@@ -1,0 +1,21 @@
+---
+# Install r environment tools
+# The R language and libraries are maintained by conda
+
+# Found via https://chaosmail.github.io/programming/2015/03/04/install-deb-packages-in-ansible/
+- name: Check if my_package is installed
+  command: dpkg-query -W rstudio
+  register: rstudio_check_deb
+  failed_when: rstudio_check_deb.rc > 1
+  changed_when: rstudio_check_deb.rc == 1
+
+- name: Download rstudio
+  get_url: 
+    url="{{ development_rstudio_download_url }}"
+    dest="/tmp/rstudio.deb"
+    checksum=md5:"{{ development_rstudio_download_checksum }}"
+  when: rstudio_check_deb.rc == 1
+
+- name: Install my_package
+  apt: deb="/tmp/rstudio.deb"
+  when: rstudio_check_deb.rc == 1
