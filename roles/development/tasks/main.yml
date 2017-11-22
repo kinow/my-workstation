@@ -42,6 +42,9 @@
     - shellcheck
     # image processing
     - libimage-exiftool-perl
+    - libgdal1-dev
+    - libproj-dev
+
 
 # --- Other packages
 
