@@ -74,4 +74,4 @@
 - import_tasks: roles/development/tasks/maven.yml
 - import_tasks: roles/development/tasks/anaconda.yml
 - import_tasks: roles/development/tasks/r.yml
-
+- import_tasks: roles/development/tasks/docker.yml

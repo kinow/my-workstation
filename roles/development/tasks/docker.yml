@@ -1,0 +1,24 @@
+---
+# Install docker CE
+
+- name: Add the apt key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable
+    state: present
+
+- apt:
+    name: docker-ce
+    state: latest
+
+- name: ensure service starts on a fresh reboot
+  service: name=docker state=started enabled=yes
+
+# to execute docker without sudo
+- name: Add user to docker group 
+  user: name=kinow
+        groups=docker
+        append=yes
