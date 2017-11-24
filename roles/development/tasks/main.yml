@@ -28,7 +28,6 @@
 
 - name: Install base development packages and headers
   action: apt pkg={{item}} state=installed
-  become_method: sudo
   with_items:
     - build-essential
     - unzip
@@ -52,7 +51,6 @@
     - libgdal1-dev
     - libproj-dev
 
-
 # --- Other packages
 
 # Copy Eclipse Workspace
@@ -75,3 +73,4 @@
 - import_tasks: roles/development/tasks/anaconda.yml
 - import_tasks: roles/development/tasks/r.yml
 - import_tasks: roles/development/tasks/docker.yml
+- import_tasks: roles/development/tasks/php.yml

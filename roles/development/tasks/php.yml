@@ -1,0 +1,13 @@
+---
+# Install PHP
+
+- name: Install PHP
+  action: apt pkg={{item}} state=latest
+  with_items:
+    - php7.0-cli
+    - php-curl
+    - php-mbstring
+    - php-xml
+    - php-gd
+    - php-gmp
+    - php-zip
