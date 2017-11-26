@@ -11,3 +11,5 @@
     - php-gd
     - php-gmp
     - php-zip
+    - php-mysql
+    - php-sqlite3
