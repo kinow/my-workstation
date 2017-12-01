@@ -10,7 +10,6 @@
    - gir1.2-ubuntuoneui-3.0
    - libubuntuoneui-3.0-1
    - libzeitgeist-1.0-1
-   - modemmanager
    - python-ubuntuone-client
    - python-ubuntuone-control-panel
    - python-ubuntuone-storageprotocol
@@ -22,8 +21,6 @@
    - ubuntuone-control-panel
    - ubuntuone-couch
    - ubuntuone-installer
-   - update-notifier
-   - whoopsie
    - zeitgeist
    - zeitgeist-core
    - zeitgeist-datahub
@@ -36,9 +33,7 @@
     - brltty
     - cups
     - cups-browsed
-    - saned
     - speech-dispatcher
-    - whoopsie
 
 - name: Disable zeitgeist access to its DB
   file:
