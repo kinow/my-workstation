@@ -28,7 +28,7 @@
    - zeitgeist-core
    - zeitgeist-datahub
 
-- name: stop services
+- name: Stop services
   systemd: name={{ item }} state=stopped enabled=no
   with_items:
     - apport
@@ -39,3 +39,41 @@
     - saned
     - speech-dispatcher
     - whoopsie
+
+- name: Disable zeitgeist access to its DB
+  file:
+    path: /home/kinow/.local/share/zeitgeist/activity.sqlite
+    state: file
+    mode: 0100
+
+- name: Disable avahi-daemon completely 1
+  copy:
+    content: |
+      start on (never
+         and filesystem
+          and started dbus)
+      stop on stopping dbus
+    dest: /etc/init/avahi-daemon.conf
+    backup: yes
+  run_once: yes
+  delegate_to: localhost
+
+- name: Disable avahi-daemon completely 2
+  copy:
+    content: |
+      #!/bin/sh
+      exit 0
+    dest: /etc/network/if-up.d/avahi-autoipd
+    backup: yes
+  run_once: yes
+  delegate_to: localhost
+
+- name: Disable avahi-daemon completely 2
+  copy:
+    content: |
+      #!/bin/sh
+      exit 0
+    dest: /etc/network/if-up.d/avahi-daemon
+    backup: yes
+  run_once: yes
+  delegate_to: localhost
