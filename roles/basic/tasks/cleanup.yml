@@ -1,0 +1,30 @@
+---
+# Clean up, based largely on https://l3net.wordpress.com/2013/02/08/ubuntu-cleanup/
+
+- name: Uninstall packages
+  apt: pkg={{ item }} state=absent
+  with_items:
+   - apt-xapian-index
+   - colord
+   - deja-dup
+   - gedit
+   - gir1.2-ubuntuoneui-3.0
+   - libubuntuoneui-3.0-1
+   - libzeitgeist-1.0-1
+   - modemmanager
+   - python-ubuntuone-client
+   - python-ubuntuone-control-panel
+   - python-ubuntuone-storageprotocol
+   - python-zeitgeist
+   - rhythmbox-plugin-zeitgeist
+   - rhythmbox-ubuntuone
+   - ubuntuone-client
+   - ubuntuone-client-gnome
+   - ubuntuone-control-panel
+   - ubuntuone-couch
+   - ubuntuone-installer
+   - update-notifier
+   - whoopsie
+   - zeitgeist
+   - zeitgeist-core
+   - zeitgeist-datahub

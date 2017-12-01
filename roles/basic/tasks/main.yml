@@ -16,4 +16,5 @@
    - wesnoth
 
 - import_tasks: xfce.yml
-- import_tasks: roles/basic/tasks/chrome.yml
+- import_tasks: chrome.yml
+- import_tasks: cleanup.yml
