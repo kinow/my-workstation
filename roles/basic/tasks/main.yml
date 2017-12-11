@@ -10,6 +10,11 @@
    - thunderbird
    - xchat-gnome
 
+- name: Install multimedia
+  apt: update_cache=yes cache_valid_time=3600 pkg={{ item }} state=present # won't update if done under an hour ago
+  with_items:
+   - vlc
+
 - name: Install games
   apt: update_cache=yes cache_valid_time=3600 pkg={{ item }} state=present # won't update if done under an hour ago
   with_items:
