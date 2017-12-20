@@ -1,0 +1,41 @@
+---
+# Add support to Japanese
+
+- name: "apt | Fix message 'The language support is not installed completely'"
+  action: apt pkg={{item}} state=installed
+  with_items:
+    - fcitx-ui-classic
+    - hunspell-en-za
+    - libreoffice-help-en-gb
+    - libreoffice-l10n-en-za
+    - libreoffice-l10n-ja
+    - libreoffice-help-ja
+    - fcitx-frontend-gtk3
+    - gimp-help-ja
+    - fcitx-frontend-qt5
+    - fcitx-mozc
+    - mythes-en-au
+    - gimp-help-en
+    - fcitx
+    - firefox-locale-ja
+    - thunderbird-locale-en-gb
+    - fcitx-frontend-qt4
+    - hyphen-en-gb
+    - fcitx-frontend-gtk2
+    - hunspell-en-ca
+    - thunderbird-locale-ja
+    - libreoffice-l10n-en-gb
+    - hunspell-en-gb
+    - ibus-mozc
+    - hunspell-en-au
+
+- name: "apt | Install Japanese fonts"
+# from https://en.wikipedia.org/wiki/Help:Installing_Japanese_character_sets#Debian_and_Ubuntu
+  action: apt pkg={{item}} state=installed
+  with_items:
+    - fonts-takao
+    - fonts-takao-mincho
+    - language-pack-ja
+    - language-pack-gnome-ja
+    - language-pack-ja-base
+    - language-pack-gnome-ja-base
