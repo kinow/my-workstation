@@ -1,0 +1,24 @@
+---
+# Install Scala programming language environment
+# Refs:
+# - http://www.scala-sbt.org/download.html
+# - http://docs.ansible.com/ansible/latest/apt_repository_module.html
+
+- name: Add the apt key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+    state: present
+
+- name: Add Scala repo
+  become_method: sudo
+  apt_repository:
+    repo: deb https://dl.bintray.com/sbt/debian /
+    state: present
+    filename: 'sbt'
+
+- name: Install Scala
+  become_method: sudo
+  apt: pkg={{item}} state=installed
+  with_items:
+    - sbt
