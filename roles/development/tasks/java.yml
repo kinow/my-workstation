@@ -24,5 +24,6 @@
   with_items:
     - ant
     - ant-contrib
+    - gradle
     # to fix eclipse crashing saying it cannot find MOZILLA_FIVE_HOME
     - libwebkitgtk-1.0-0
