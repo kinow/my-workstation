@@ -50,6 +50,7 @@
     - libimage-exiftool-perl
     - libgdal1-dev
     - libproj-dev
+    - jhove
 
 # --- Other packages
 
