@@ -1,0 +1,18 @@
+---
+# Install VirtualBox
+
+- name: "apt | ensure VirtualBox linux signing key present"
+  apt_key: url=https://www.virtualbox.org/download/oracle_vbox_2016.asc state=present
+
+- name: "apt | ensure VirtualBox repo present"
+  copy:
+    content: "deb http://download.virtualbox.org/virtualbox/debian xenial contrib"
+    dest: "/etc/apt/sources.list.d/virtualbox.list"
+  register: virtualbox
+
+- name: "apt | update cache"
+  apt: update_cache=yes
+  when: virtualbox.changed
+  
+- name: "apt | ensure VirtualBox present"
+  apt: name=virtualbox-5.2 update_cache=yes
