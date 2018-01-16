@@ -76,3 +76,4 @@
 - import_tasks: roles/development/tasks/docker.yml
 - import_tasks: roles/development/tasks/php.yml
 - import_tasks: roles/development/tasks/scala.yml
+- import_tasks: roles/development/tasks/cv.yml

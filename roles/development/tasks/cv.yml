@@ -1,0 +1,17 @@
+---
+# Install LaTeX and other tools for the CV generation process
+
+- name: Install LaTeX
+  action: apt pkg={{item}} state=latest
+  with_items:
+    - latexmk
+    - biber
+    - unzip
+    - texlive-binaries
+    - texlive-latex-extra
+    - texlive-fonts-extra
+  register: cv_deps_installed
+
+- name: Run mktexlsr
+  shell: mktexlsr
+  become: true
