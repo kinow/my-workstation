@@ -1,0 +1,7 @@
+---
+# Install GIS tools
+
+- name: Install GIS tools
+  action: apt pkg={{item}} state=latest
+  with_items:
+    - qgis
