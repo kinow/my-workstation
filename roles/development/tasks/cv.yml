@@ -15,3 +15,4 @@
 - name: Run mktexlsr
   shell: mktexlsr
   become: true
+  when: cv_deps_installed.changed
