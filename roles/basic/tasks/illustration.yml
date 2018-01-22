@@ -1,0 +1,8 @@
+---
+# Install Illustration tools
+
+- name: Install illustration tools
+  action: apt pkg={{item}} state=installed
+  with_items:
+   - gimp
+   - inkscape

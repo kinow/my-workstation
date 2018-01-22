@@ -4,7 +4,6 @@
 # --- basic
 basic_packages:
   - apt-transport-https
-  - gimp
   - htop
   - python-pip
   - rcconf

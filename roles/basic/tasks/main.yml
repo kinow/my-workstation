@@ -25,3 +25,4 @@
 - import_tasks: cleanup.yml
 - import_tasks: japanese.yml
 - import_tasks: virtualbox.yml
+- import_tasks: illustration.yml
