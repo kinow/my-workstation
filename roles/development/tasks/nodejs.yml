@@ -1,0 +1,8 @@
+---
+# Install NodeJS
+
+- name: Install NodeJS
+  action: apt pkg={{item}} state=latest
+  with_items:
+    - nodejs
+    - npm
