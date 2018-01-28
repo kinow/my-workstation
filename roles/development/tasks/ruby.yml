@@ -4,4 +4,6 @@
 - name: Install Ruby
   action: apt pkg={{item}} state=latest
   with_items:
+    - ruby
+    - ruby-dev
     - ruby-bundler
