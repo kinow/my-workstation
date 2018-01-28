@@ -81,3 +81,4 @@
 - import_tasks: roles/development/tasks/cv.yml
 - import_tasks: roles/development/tasks/gis.yml
 - import_tasks: roles/development/tasks/nodejs.yml
+- import_tasks: roles/development/tasks/ruby.yml
