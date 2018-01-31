@@ -4,11 +4,13 @@
 # --- basic
 basic_packages:
   - apt-transport-https
+  - gparted
   - htop
   - python-pip
   - rcconf
   - tmux
   - tree
+  - unetbootin
   - vim
   - youtube-dl
 
