@@ -1,0 +1,7 @@
+---
+# Install security tools
+
+- name: Install security tools
+  action: apt pkg={{item}} state=latest
+  with_items:
+    - nikto
