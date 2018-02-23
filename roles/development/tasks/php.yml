@@ -13,3 +13,4 @@
     - php-zip
     - php-mysql
     - php-sqlite3
+    - phpunit
