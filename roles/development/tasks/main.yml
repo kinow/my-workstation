@@ -53,6 +53,8 @@
     - jhove
     # static site generators
     - jekyll
+    # pdf
+    - wkhtmltopdf
 
 # --- Other packages
 
