@@ -55,8 +55,6 @@
     - jekyll
     # pdf
     - wkhtmltopdf
-    # virtualization and container
-    - vagrant
 
 # --- Other packages
 
