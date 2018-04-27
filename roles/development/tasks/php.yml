@@ -14,3 +14,4 @@
     - php-mysql
     - php-sqlite3
     - phpunit
+    - php-xdebug
