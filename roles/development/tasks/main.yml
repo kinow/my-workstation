@@ -43,6 +43,7 @@
     - byzanz
     - gitk
     - git
+    - git-svn
     - subversion
     # shellscript static analyzer
     - shellcheck
