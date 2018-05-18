@@ -47,9 +47,6 @@
     - ghp-import
     # for screen recording, creating GIF's, ...
     - byzanz
-    - gitk
-    - git
-    - git-svn
     - subversion
     # shellscript static analyzer
     - shellcheck
@@ -85,6 +82,7 @@
   tags:
     - development
 
+- import_tasks: roles/development/tasks/git.yml
 - import_tasks: roles/development/tasks/sublime.yml
 - import_tasks: roles/development/tasks/java.yml
 - import_tasks: roles/development/tasks/maven.yml
