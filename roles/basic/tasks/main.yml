@@ -21,6 +21,7 @@
    - wesnoth
 
 - import_tasks: xfce.yml
+- import_tasks: wallpaper.yml
 - import_tasks: chrome.yml
 - import_tasks: cleanup.yml
 - import_tasks: japanese.yml

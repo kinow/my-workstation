@@ -10,6 +10,8 @@
   tags: git
 
 - name: Setup default git configuraiton
+  become: yes
+  become_user: kinow
   git_config:
     name="{{ item.name }}"
     scope=global

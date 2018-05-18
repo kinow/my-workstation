@@ -1,3 +1,28 @@
 ---
 # Change system wallpaper
 
+- name: Check that the wallpaper exists
+  stat:
+    path: /home/kinow/Pictures/orion-nebula-hd-wallpaper-1440x900.jpeg
+  register: stat_result
+
+- name: Get current wallpaper
+  become: yes
+  become_user: kinow
+  shell: xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitor0/image-path
+  register: current_wallpaper
+  when: stat_result.stat.exists == False 
+
+- name: Create the wallpaper
+  become: yes
+  become_user: kinow
+  shell: cp '{{ role_path }}/files/orion-nebula-hd-wallpaper-1440x900.jpeg' /home/kinow/Pictures/orion-nebula-hd-wallpaper-1440x900.jpeg
+  when: stat_result.stat.exists == False 
+
+- name: Define new wallpaper
+  become: yes
+  become_user: kinow
+  shell: |
+    xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitor0/image-path --set /home/kinow/Pictures/orion-nebula-hd-wallpaper-1440x900.jpeg && \
+    xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitor0/workspace0/last-image --set /home/kinow/Pictures/orion-nebula-hd-wallpaper-1440x900.jpeg
+  when: stat_result.stat.exists == False
