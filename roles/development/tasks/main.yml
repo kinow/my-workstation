@@ -85,3 +85,4 @@
 - import_tasks: roles/development/tasks/nodejs.yml
 - import_tasks: roles/development/tasks/ruby.yml
 - import_tasks: roles/development/tasks/security.yml
+- import_tasks: roles/development/tasks/vim.yml
