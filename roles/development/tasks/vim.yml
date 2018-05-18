@@ -1,0 +1,12 @@
+- name: Install VIM
+  action: apt pkg={{item}} state=installed
+  with_items:
+    - vim
+
+- name: Create vimrc
+  copy:
+    content: |
+      set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+    dest: /home/kinow/.vimrc
+    backup: no
+  run_once: yes
