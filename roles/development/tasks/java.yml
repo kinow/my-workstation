@@ -14,7 +14,7 @@
 
 - name: Install Java
   become_method: sudo
-  apt: pkg={{item}} state=installed
+  apt: pkg={{item}} state=present
   with_items:
     - oracle-java8-installer
     - ca-certificates
@@ -23,7 +23,7 @@
 
 - name: Install other Java projects
   become_method: sudo
-  apt: pkg={{item}} state=installed
+  apt: pkg={{item}} state=present
   with_items:
     - ant
     - ant-contrib

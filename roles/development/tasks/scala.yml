@@ -19,6 +19,6 @@
 
 - name: Install Scala
   become_method: sudo
-  apt: pkg={{item}} state=installed
+  apt: pkg={{item}} state=present
   with_items:
     - sbt

@@ -33,7 +33,7 @@
 # --- Development packages
 
 - name: Install base development packages and headers
-  action: apt pkg={{item}} state=installed
+  action: apt pkg={{item}} state=present
   with_items:
     - build-essential
     - unzip

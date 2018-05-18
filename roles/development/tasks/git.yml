@@ -2,7 +2,7 @@
 # Install git
 
 - name: Install git
-  action: apt pkg={{item}} state=installed
+  action: apt pkg={{item}} state=present
   with_items:
     - gitk
     - git

@@ -2,7 +2,7 @@
 # Install Illustration tools
 
 - name: Install illustration tools
-  action: apt pkg={{item}} state=installed
+  action: apt pkg={{item}} state=present
   with_items:
    - blender
    - gimp

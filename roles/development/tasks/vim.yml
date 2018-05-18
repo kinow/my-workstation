@@ -2,7 +2,7 @@
 # Install VIM
 
 - name: Install VIM
-  action: apt pkg={{item}} state=installed
+  action: apt pkg={{item}} state=present
   with_items:
     - vim
 
