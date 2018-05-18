@@ -17,12 +17,18 @@
     - '/home/kinow/Development/ansible/workspace'
     - '/home/kinow/Development/shell/workspace'
     - '/home/kinow/Development/r/workspace'
+  tags:
+    - development
+    - java
 
 # --- Development repositories
 
 - name: Install UbuntuGIS repository
   apt_repository:
     repo: 'ppa:ubuntugis/ppa'
+  tags:
+    - development
+    - gis
 
 # --- Development packages
 
@@ -56,6 +62,7 @@
     - jekyll
     # pdf
     - wkhtmltopdf
+  tags: development
 
 # --- Other packages
 
@@ -65,6 +72,9 @@
     url: https://raw.githubusercontent.com/kinow/cpew/master/cpew
     dest: /home/kinow/bin/cpew
     mode: 0750
+  tags:
+    - development
+    - java
 
 # Byzanz Record GUI
 - name: Install byzanz-gui
@@ -72,6 +82,8 @@
     url: https://raw.githubusercontent.com/rhcarvalho/byzanz-gui/master/byzanz-gui
     dest: /home/kinow/bin/byzanz-gui
     mode: 0750
+  tags:
+    - development
 
 - import_tasks: roles/development/tasks/sublime.yml
 - import_tasks: roles/development/tasks/java.yml

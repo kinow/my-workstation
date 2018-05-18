@@ -5,12 +5,18 @@
   stat: 
     path: '/opt/apache-maven-{{ development_maven_version }}'
   register: maven_installed
+  tags:
+    - development
+    - java
 
 - name: Downloading Maven Binaries
   get_url:
     url: '{{ development_maven_download_url }}'
     dest: '/tmp/{{ development_maven_file_name }}'
   when: maven_installed.stat.exists != True
+  tags:
+    - development
+    - java
 
 - name: Unarchive Maven Binaries
   unarchive:
@@ -18,9 +24,15 @@
     dest: '/opt'
     copy: no
   when: maven_installed.stat.exists != True
+  tags:
+    - development
+    - java
 
 - name: Create mvn link
   file:
     src: '/opt/apache-maven-{{ development_maven_version }}/bin/mvn'
     dest: '/home/kinow/bin/mvn'
     state: link
+  tags:
+    - development
+    - java
