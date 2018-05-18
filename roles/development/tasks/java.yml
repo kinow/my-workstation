@@ -5,10 +5,12 @@
 - name: Add webupd repo
   become_method: sudo
   apt_repository: repo='ppa:webupd8team/java'
+  tags: java
 
 - name: Deal with licence
   become_method: sudo
   debconf: name='oracle-java8-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'
+  tags: java
 
 - name: Install Java
   become_method: sudo
@@ -17,6 +19,7 @@
     - oracle-java8-installer
     - ca-certificates
     - oracle-java8-set-default
+  tags: java
 
 - name: Install other Java projects
   become_method: sudo
@@ -28,3 +31,39 @@
     - javacc
     # to fix eclipse crashing saying it cannot find MOZILLA_FIVE_HOME
     - libwebkitgtk-1.0-0
+  tags: java
+
+- name: Checking if jad is already installed
+  stat: 
+    path: '/home/kinow/bin/jad'
+  register: jad_installed
+  tags: java
+
+- name: Downloading jad Binaries
+  get_url:
+    url: '{{ development_jad_installer }}'
+    dest: '/tmp/jad.zip'
+  when: jad_installed.stat.exists != True
+  tags: java
+
+- name: Unarchive Maven Binaries
+  unarchive:
+    src: '/tmp/jad.zip'
+    dest: '/tmp'
+    copy: no
+  when: jad_installed.stat.exists != True
+  tags: java
+
+- name: Install jad
+  shell: mv /tmp/jad /home/kinow/bin/jad
+  when: jad_installed.stat.exists != True
+  tags: java
+
+- name: Set permissions for file
+  file:
+    path: /home/kinow/bin/jad
+    owner: kinow
+    group: kinow
+    mode: 0744
+  tags: java
+
