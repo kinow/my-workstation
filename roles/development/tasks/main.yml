@@ -1,7 +1,7 @@
 ---
 # Install development tools, and configure development environments
 - name: Create workspace directories
-  action: file path={{item}} state=directory
+  action: file path={{item}} state=directory owner=kinow mode=0700
   with_items:
     - '/home/kinow/bin'
     - '/home/kinow/Development'
