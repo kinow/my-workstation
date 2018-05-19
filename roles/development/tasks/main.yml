@@ -17,6 +17,7 @@
     - '/home/kinow/Development/ansible/workspace'
     - '/home/kinow/Development/shell/workspace'
     - '/home/kinow/Development/r/workspace'
+    - '/home/kinow/Development/ruby/workspace'
   tags:
     - development
     - java
