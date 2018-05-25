@@ -1,7 +1,32 @@
 ---
 # Install GIS tools
 
+- name: Add the QGIS apt key
+  apt_key:
+    url: https://qgis.org/downloads/qgis-2017.gpg.key
+    state: present
+  tags:
+    - gis
+    - qgis
+
+- apt_repository:
+    repo: ppa:ubuntugis/ubuntugis-unstable
+    state: present
+  tags:
+    - gis
+    - qgis
+
+- apt_repository:
+    repo: deb https://qgis.org/ubuntugis/ xenial main
+    state: present
+  tags:
+    - gis
+    - qgis
+
 - name: Install GIS tools
   action: apt pkg={{item}} state=latest
   with_items:
+    - qgis
+  tags:
+    - gis
     - qgis
