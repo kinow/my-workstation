@@ -56,6 +56,7 @@
     - libgdal1-dev
     - libproj-dev
     - jhove
+    - libtiff-tools
     # static site generators
     - jekyll
     # pdf
