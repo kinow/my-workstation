@@ -61,6 +61,8 @@
     - jekyll
     # pdf
     - wkhtmltopdf
+    # misc
+    - libcairo-dev
   tags: development
 
 # --- Other packages
