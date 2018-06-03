@@ -12,4 +12,7 @@
       set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
     dest: /home/kinow/.vimrc
     backup: no
+    owner: kinow
+    group: kinow
+    mode: 0644
   run_once: yes
