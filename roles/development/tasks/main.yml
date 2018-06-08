@@ -18,6 +18,7 @@
     - '/home/kinow/Development/shell/workspace'
     - '/home/kinow/Development/r/workspace'
     - '/home/kinow/Development/ruby/workspace'
+    - '/home/kinow/Development/prolog/workspace'
   tags:
     - development
     - java
@@ -101,3 +102,4 @@
 - import_tasks: roles/development/tasks/ruby.yml
 - import_tasks: roles/development/tasks/security.yml
 - import_tasks: roles/development/tasks/vim.yml
+- import_tasks: roles/development/tasks/prolog.yml
