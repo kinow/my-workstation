@@ -47,6 +47,9 @@
     - libffi-dev
     - cl-cffi
     - ghp-import
+    # for cylc
+    - graphviz
+    - graphviz-dev
     # for screen recording, creating GIF's, ...
     - byzanz
     - subversion
