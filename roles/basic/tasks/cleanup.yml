@@ -11,6 +11,7 @@
    - gir1.2-ubuntuoneui-3.0
    - libubuntuoneui-3.0-1
    - libzeitgeist-1.0-1
+   - popularity-contest
    - python-ubuntuone-client
    - python-ubuntuone-control-panel
    - python-ubuntuone-storageprotocol
