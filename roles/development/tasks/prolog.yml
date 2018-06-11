@@ -16,4 +16,5 @@
     - libssl-dev
     - unixodbc-dev
     - libarchive-dev
+    - swi-prolog-java
   tags: prolog

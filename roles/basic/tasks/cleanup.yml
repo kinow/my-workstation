@@ -5,6 +5,7 @@
   apt: pkg={{ item }} state=absent
   with_items:
    - apt-xapian-index
+   - click
    - colord
    - deja-dup
    - gir1.2-ubuntuoneui-3.0
