@@ -65,6 +65,8 @@
     - jekyll
     # pdf
     - wkhtmltopdf
+    - #translation
+    - poedit
     # misc
     - libcairo-dev
   tags: development
