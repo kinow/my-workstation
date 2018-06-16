@@ -12,6 +12,7 @@ basic_packages:
   - tree
   - unetbootin
   - vim
+  - xclip
   - youtube-dl
 
 # --- development
