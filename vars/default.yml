@@ -5,6 +5,7 @@
 basic_packages:
   - apt-transport-https
   - gparted
+  - gpick
   - htop
   - python-pip
   - rcconf
