@@ -1,0 +1,7 @@
+---
+# Install Perl and tools
+
+- name: Install Perl and tools
+  action: apt pkg={{item}} state=latest
+  with_items:
+    - cpanminus
