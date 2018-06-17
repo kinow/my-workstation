@@ -43,6 +43,7 @@
     - curl
     - xz-utils
     - cpio
+    - meld
     # next three for python piecrust module
     - libffi-dev
     - cl-cffi
