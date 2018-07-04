@@ -44,6 +44,7 @@
     - xz-utils
     - cpio
     - meld
+    - mercurial
     # next three for python piecrust module
     - libffi-dev
     - cl-cffi
