@@ -45,6 +45,7 @@
     - cpio
     - meld
     - mercurial
+    - wireshark-qt
     # next three for python piecrust module
     - libffi-dev
     - cl-cffi
