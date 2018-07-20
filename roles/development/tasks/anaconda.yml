@@ -29,7 +29,9 @@
     content: |
       #!/bin/bash
 
-      PATH=~/Development/python/anaconda3/bin:$PATH
+      . /home/kinow/Development/python/anaconda3/etc/profile.d/conda.sh
     dest: /home/kinow/Development/python/sa3.sh
     backup: no
+    owner: kinow
+    group: kinow
   run_once: yes
