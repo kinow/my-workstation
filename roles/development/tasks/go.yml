@@ -1,0 +1,7 @@
+---
+# Install Go
+
+- name: Install Go
+  action: apt pkg={{item}} state=latest
+  with_items:
+    - golang-go

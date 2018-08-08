@@ -113,3 +113,4 @@
 - import_tasks: roles/development/tasks/vim.yml
 - import_tasks: roles/development/tasks/prolog.yml
 - import_tasks: roles/development/tasks/perl.yml
+- import_tasks: roles/development/tasks/go.yml
