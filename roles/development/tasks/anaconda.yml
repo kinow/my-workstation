@@ -29,7 +29,7 @@
     content: |
       #!/bin/bash
 
-      . /home/kinow/Development/python/anaconda3/etc/profile.d/conda.sh
+      PATH=~/Development/python/anaconda3/bin:$PATH
     dest: /home/kinow/Development/python/sa3.sh
     backup: no
     owner: kinow
