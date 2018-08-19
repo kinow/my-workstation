@@ -6,7 +6,7 @@
 
 - name: "apt | ensure VirtualBox repo present"
   copy:
-    content: "deb http://download.virtualbox.org/virtualbox/debian xenial contrib"
+    content: "deb http://download.virtualbox.org/virtualbox/debian bionic contrib"
     dest: "/etc/apt/sources.list.d/virtualbox.list"
   register: virtualbox
 

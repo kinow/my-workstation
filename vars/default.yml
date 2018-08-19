@@ -8,10 +8,10 @@ basic_packages:
   - gpick
   - htop
   - python-pip
-  - rcconf
+  #- rcconf # not working on ubuntu 18.04
   - tmux
   - tree
-  - unetbootin
+  #- unetbootin # not working on ubuntu 18.04
   - vim
   - xclip
   - youtube-dl

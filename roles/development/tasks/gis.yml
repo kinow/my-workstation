@@ -17,7 +17,7 @@
     - qgis
 
 - apt_repository:
-    repo: deb https://qgis.org/ubuntugis/ xenial main
+    repo: deb https://qgis.org/debian bionic main
     state: present
   tags:
     - gis

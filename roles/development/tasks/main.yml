@@ -25,12 +25,12 @@
 
 # --- Development repositories
 
-- name: Install UbuntuGIS repository
-  apt_repository:
-    repo: 'ppa:ubuntugis/ppa'
-  tags:
-    - development
-    - gis
+# - name: Install UbuntuGIS repository
+#   apt_repository:
+#     repo: 'ppa:ubuntugis/ppa'
+#   tags:
+#     - development
+#     - gis
 
 # --- Development packages
 
@@ -40,6 +40,7 @@
     - build-essential
     - unzip
     - p7zip-full
+    - libcurl4
     - curl
     - xz-utils
     - cpio
@@ -61,7 +62,7 @@
     - shellcheck
     # image processing
     - libimage-exiftool-perl
-    - libgdal1-dev
+    - libgdal-dev
     - libproj-dev
     - jhove
     - libtiff-tools

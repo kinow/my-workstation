@@ -4,7 +4,7 @@
 - name: Install PHP
   action: apt pkg={{item}} state=latest
   with_items:
-    - php7.0-cli
+    - php-cli
     - php-curl
     - php-mbstring
     - php-xml

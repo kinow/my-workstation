@@ -6,7 +6,7 @@
   with_items:
    # https://sites.google.com/site/easylinuxtipsproject/alternative
    - xubuntu-desktop
-   - gksu
+   # - gksu # not working on ubuntu 18.04
    - leafpad
    - synaptic
    - dconf-editor
